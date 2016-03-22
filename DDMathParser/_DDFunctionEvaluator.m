@@ -482,7 +482,7 @@ static NSString *const _DDFunctionSelectorSuffix = @":variables:error:";
     NSNumber *n = [[self evaluator] evaluateExpression:arguments[0] withSubstitutions:variables error:error];
     RETURN_IF_NIL(n);
     
-    NSNumber *result = @(llabs([n longLongValue]));
+    NSNumber *result = @(fabs([n doubleValue]));
 	return [DDExpression numberExpressionWithNumber:result];
 }
 
